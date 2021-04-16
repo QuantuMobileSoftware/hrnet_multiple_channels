@@ -9,8 +9,6 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-import os
-
 from yacs.config import CfgNode as CN
 
 
@@ -57,7 +55,7 @@ _C.LOSS.BALANCE_WEIGHTS = [1]
 _C.DATASET = CN()
 _C.DATASET.ROOT = ''
 _C.DATASET.DATASET = 'cityscapes'
-_C.DATASET.NUM_CLASSES = 19
+_C.DATASET.NUM_CLASSES = 1
 _C.DATASET.TRAIN_SET = 'list/cityscapes/train.lst'
 _C.DATASET.EXTRA_TRAIN_SET = ''
 _C.DATASET.TEST_SET = 'list/cityscapes/val.lst'
@@ -130,7 +128,7 @@ _C.DEBUG.SAVE_HEATMAPS_PRED = False
 
 def update_config(cfg, args):
     cfg.defrost()
-    
+
     cfg.merge_from_file(args.cfg)
     cfg.merge_from_list(args.opts)
 
@@ -141,4 +139,3 @@ if __name__ == '__main__':
     import sys
     with open(sys.argv[1], 'w') as f:
         print(_C, file=f)
-
