@@ -128,3 +128,4 @@ MODEL_CONFIGS = {
     'hrnet32': HRNET_32,
     'hrnet48': HRNET_48,
 }
+

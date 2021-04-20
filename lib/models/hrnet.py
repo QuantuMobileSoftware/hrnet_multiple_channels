@@ -548,3 +548,4 @@ def hrnet48(pretrained=True, progress=True, channels=3, **kwargs):
                   progress=progress,
                   channels=channels,
                   **kwargs)
+
